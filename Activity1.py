@@ -1,6 +1,6 @@
 import random
 import time
-number=random.randint
+number=random.randint(1,100)
 def intro():
     print("Can you please enter your name?")
     global name
@@ -32,5 +32,21 @@ def pick():
                     print("Please try again!")
                 if guess==number:
                     break
-                
-        
+        except:        
+            print("Sorry I think",guess,"is not a number!")
+            
+    if guess == number:
+        guesstaken = str(guesstaken)        
+        print('Good job, {}! You guessed my number in {} guesses!'.format(name,guessTaken))
+
+    if guess != number:
+        print('Nope. The number I was thinking was '+str(number))
+
+playagain = "yes"
+while playagain == "yes" or playagain == "y" or playagain == "Yes":
+    intro()
+    pick()
+    print("Do you want to play again?")   
+    playagain=input()
+
+
